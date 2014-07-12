@@ -42,4 +42,12 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include FactoryGirl::Syntax::Methods
+
+  config.extend RequestMacros::SessionHelpers, type: :request
+  config.include RequestMacros::JsonHelpers, type: :request
+  config.include Warden::Test::Helpers, type: :request
+
+  config.before(:each, type: :feature) do
+    Warden.test_mode!
+  end
 end

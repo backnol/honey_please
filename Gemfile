@@ -34,6 +34,10 @@ gem 'pg'
 
 gem 'factory_girl_rails'
 
+gem 'devise'
+
+gem 'awesome_print'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

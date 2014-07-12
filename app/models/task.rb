@@ -2,8 +2,8 @@ class Task < ActiveRecord::Base
   belongs_to :user
   belongs_to :assigned_user, class_name: 'User'
 
-  # validates :user, presence: true
-  # validates :assigned_user, presence: true
+  validates :user, presence: true
+  validates :assigned_user, presence: true
   validates :title, presence: true
   validates :due_at, presence: true
   validates :points,
