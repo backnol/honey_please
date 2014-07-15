@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'should have both ' do
+    user = create(:user)
+    honey = create(:user)
+    user.honey = honey
+    user.save
+
+    expect(user.inverse_honey).to eq honey
+  end
 end
